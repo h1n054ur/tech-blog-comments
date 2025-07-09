@@ -1,317 +1,206 @@
-/* Giscus Terminal Theme - CommandLine Chronicles */
-  /* Matches the terminal aesthetic of the main site */
+/*!
+   * Custom Terminal Theme for CommandLine Chronicles
+   * Based on Giscus Dark theme structure
+   */
 
-  /* Main container */
-  .giscus, .giscus-frame {
-    color-scheme: dark;
-    background: transparent;
+  main {
+    /* Terminal color palette */
+    --color-prettylights-syntax-comment: #999999;
+    --color-prettylights-syntax-constant: #99ff99;
+    --color-prettylights-syntax-entity: #66ff66;
+    --color-prettylights-syntax-storage-modifier-import: #cccccc;
+    --color-prettylights-syntax-entity-tag: #66ff66;
+    --color-prettylights-syntax-keyword: #66ff66;
+    --color-prettylights-syntax-string: #99ff99;
+    --color-prettylights-syntax-variable: #cccccc;
+    --color-prettylights-syntax-brackethighlighter-unmatched: #ff6666;
+    --color-prettylights-syntax-invalid-illegal: #ff6666;
+    --color-prettylights-syntax-carriage-return: #ff6666;
+    --color-prettylights-syntax-string-regexp: #99ff99;
+    --color-prettylights-syntax-markup-list: #cccccc;
+    --color-prettylights-syntax-markup-heading: #66ff66;
+    --color-prettylights-syntax-markup-italic: #cccccc;
+    --color-prettylights-syntax-markup-bold: #ffffff;
+    --color-prettylights-syntax-markup-deleted: #ff6666;
+    --color-prettylights-syntax-markup-inserted: #99ff99;
+    --color-prettylights-syntax-markup-changed: #66ff66;
+    --color-prettylights-syntax-markup-ignored: #999999;
+    --color-prettylights-syntax-meta-diff-range: #66ff66;
+    --color-prettylights-syntax-brackethighlighter-angle: #cccccc;
+    --color-prettylights-syntax-sublimelinter-gutter-mark: #999999;
+    --color-prettylights-syntax-constant-other-reference-link: #99ff99;
+
+    /* Terminal UI colors */
+    --color-fg-default: #cccccc;
+    --color-fg-muted: #999999;
+    --color-fg-subtle: #666666;
+    --color-canvas-default: transparent;
+    --color-canvas-subtle: #10101a;
+    --color-border-default: #333340;
+    --color-border-muted: #333340;
+    --color-neutral-muted: rgba(102, 255, 102, 0.1);
+    --color-accent-fg: #66ff66;
+    --color-accent-emphasis: #66ff66;
+    --color-accent-muted: rgba(102, 255, 102, 0.2);
+    --color-accent-subtle: rgba(102, 255, 102, 0.1);
+    --color-success-fg: #99ff99;
+    --color-attention-fg: #66ff66;
+    --color-severe-fg: #ff6666;
+    --color-danger-fg: #ff6666;
+    --color-open-fg: #99ff99;
+    --color-closed-fg: #ff6666;
+    --color-done-fg: #99ff99;
+    --color-sponsors-fg: #66ff66;
+
+    /* Button colors */
+    --color-btn-text: #cccccc;
+    --color-btn-bg: transparent;
+    --color-btn-border: #333340;
+    --color-btn-shadow: 0 0 transparent;
+    --color-btn-inset-shadow: 0 0 transparent;
+    --color-btn-hover-bg: rgba(102, 255, 102, 0.1);
+    --color-btn-hover-border: #66ff66;
+    --color-btn-active-bg: rgba(102, 255, 102, 0.2);
+    --color-btn-active-border: #66ff66;
+    --color-btn-selected-bg: rgba(102, 255, 102, 0.1);
+    --color-btn-primary-text: #0f0f23;
+    --color-btn-primary-bg: #66ff66;
+    --color-btn-primary-border: #66ff66;
+    --color-btn-primary-shadow: 0 0 transparent;
+    --color-btn-primary-inset-shadow: 0 0 transparent;
+    --color-btn-primary-hover-bg: #99ff99;
+    --color-btn-primary-hover-border: #99ff99;
+    --color-btn-primary-selected-bg: #99ff99;
+    --color-btn-primary-selected-shadow: 0 0 transparent;
+    --color-btn-primary-disabled-text: #666666;
+    --color-btn-primary-disabled-bg: #333340;
+    --color-btn-primary-disabled-border: #333340;
+
+    /* Form controls */
+    --color-input-bg: #10101a;
+    --color-input-border: #333340;
+    --color-input-shadow: 0 0 transparent;
+    --color-input-focus-bg: #10101a;
+    --color-input-focus-border: #66ff66;
+    --color-input-focus-shadow: 0 0 0 2px rgba(102, 255, 102, 0.2);
+    --color-input-disabled-bg: #1a1a1a;
+    --color-input-disabled-border: #333340;
+    --color-input-disabled-text: #666666;
+    --color-input-placeholder-text: #999999;
+
+    /* Links */
+    --color-link-fg: #009900;
+    --color-link-hover-fg: #99ff99;
+
+    /* Reactions */
+    --color-social-reaction-bg-hover: rgba(102, 255, 102, 0.1);
+    --color-social-reaction-bg-reacted-hover: rgba(102, 255, 102, 0.2);
   }
 
-  /* Main discussion container */
-  .giscus .giscus-main {
-    background: transparent;
-    border: none;
-    border-radius: 0;
+  main .pagination-loader-container {
+    background-image: url("https://github.com/images/modules/pulls/progressive-disclosure-line-dark.svg");
+  }
+
+  main .gsc-loading-image {
+    background-image: url("https://github.githubassets.com/images/mona-loading-dimmed.gif");
+  }
+
+  /* Terminal-specific customizations */
+  main {
     font-family: "Source Code Pro", "Fira Code", "Consolas", monospace;
     font-size: 14px;
     line-height: 1.5;
-    color: #cccccc;
   }
 
-  /* Header section */
-  .giscus .giscus-header {
-    background: transparent;
-    border-bottom: 1px solid #333340;
-    padding: 15px 0;
-    margin-bottom: 20px;
-  }
-
-  .giscus .giscus-header h4 {
-    color: #66ff66;
-    font-size: 1.1em;
-    font-weight: normal;
-    margin: 0;
-  }
-
-  /* Reactions for main post */
-  .giscus .giscus-reactions {
-    background: transparent;
-    border: 1px solid #333340;
-    border-radius: 3px;
-    padding: 10px;
-    margin-bottom: 20px;
-  }
-
-  .giscus .giscus-reactions button {
-    background: transparent;
-    border: 1px solid #333340;
-    border-radius: 3px;
-    color: #cccccc;
-    padding: 5px 10px;
-    margin: 2px;
-    font-family: "Source Code Pro", monospace;
-    transition: all 0.2s ease;
-  }
-
-  .giscus .giscus-reactions button:hover {
-    background: rgba(102, 255, 102, 0.1);
-    border-color: #66ff66;
-    color: #66ff66;
-  }
-
-  .giscus .giscus-reactions button[data-reaction-count]:not([data-reaction-count="0"])::after {
-    color: #99ff99;
-  }
-
-  /* Comment form */
-  .giscus .giscus-comment-form {
-    background: transparent;
-    border: 1px solid #333340;
-    border-radius: 3px;
-    padding: 15px;
-    margin-bottom: 20px;
-  }
-
-  .giscus .giscus-comment-form textarea {
-    background: #10101a;
-    border: 1px solid #333340;
-    border-radius: 3px;
-    color: #cccccc;
-    font-family: "Source Code Pro", monospace;
+  main .gsc-comment-box-textarea {
+    font-family: "Source Code Pro", "Fira Code", "Consolas", monospace;
     font-size: 14px;
-    padding: 10px;
-    resize: vertical;
-    min-height: 80px;
+    background-color: #10101a;
+    color: #cccccc;
+    border: 1px solid #333340;
+    border-radius: 3px;
   }
 
-  .giscus .giscus-comment-form textarea:focus {
+  main .gsc-comment-box-textarea:focus {
     border-color: #66ff66;
-    outline: none;
     box-shadow: 0 0 0 2px rgba(102, 255, 102, 0.2);
   }
 
-  .giscus .giscus-comment-form textarea::placeholder {
+  main .gsc-comment-box-textarea::placeholder {
     color: #999999;
   }
 
-  /* Submit button */
-  .giscus .giscus-comment-form button[type="submit"] {
-    background: transparent;
-    border: 1px solid #66ff66;
-    border-radius: 3px;
-    color: #66ff66;
-    padding: 8px 16px;
-    font-family: "Source Code Pro", monospace;
-    font-size: 14px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-  }
-
-  .giscus .giscus-comment-form button[type="submit"]:hover {
-    background: #66ff66;
-    color: #0f0f23;
-  }
-
-  .giscus .giscus-comment-form button[type="submit"]:disabled {
-    border-color: #666666;
-    color: #666666;
-    cursor: not-allowed;
-  }
-
-  /* Individual comments */
-  .giscus .giscus-comment {
-    background: transparent;
+  main .gsc-comment {
     border: 1px solid #333340;
     border-radius: 3px;
-    margin-bottom: 15px;
-    padding: 15px;
+    background-color: transparent;
   }
 
-  .giscus .giscus-comment-header {
+  main .gsc-comment-header {
     border-bottom: 1px solid #333340;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
   }
 
-  .giscus .giscus-comment-author {
+  main .gsc-comment-author {
     color: #66ff66;
-    font-weight: normal;
-    text-decoration: none;
   }
 
-  .giscus .giscus-comment-author:hover {
+  main .gsc-comment-author:hover {
     color: #99ff99;
     text-shadow: 0 0 8px rgba(153, 255, 153, 0.4);
   }
 
-  .giscus .giscus-comment-timestamp {
-    color: #999999;
-    font-size: 0.9em;
-  }
-
-  .giscus .giscus-comment-content {
-    color: #cccccc;
-    line-height: 1.6;
-  }
-
-  .giscus .giscus-comment-content p {
-    margin: 10px 0;
-  }
-
-  .giscus .giscus-comment-content a {
+  main .gsc-comment-content a {
     color: #009900;
-    text-decoration: none;
-    transition: all 0.2s ease;
   }
 
-  .giscus .giscus-comment-content a:hover {
+  main .gsc-comment-content a:hover {
     color: #99ff99;
     text-shadow: 0 0 8px rgba(153, 255, 153, 0.4);
   }
 
-  /* Code blocks in comments */
-  .giscus .giscus-comment-content code {
-    background: #10101a;
+  main .gsc-comment-content code {
+    background-color: #10101a;
+    color: #99ff99;
     border: 1px solid #333340;
     border-radius: 3px;
-    color: #99ff99;
-    font-family: "Source Code Pro", monospace;
-    font-size: 0.9em;
     padding: 2px 6px;
+    font-family: "Source Code Pro", "Fira Code", "Consolas", monospace;
   }
 
-  .giscus .giscus-comment-content pre {
-    background: #10101a;
+  main .gsc-comment-content pre {
+    background-color: #10101a;
     border: 1px solid #333340;
     border-radius: 3px;
     color: #cccccc;
-    font-family: "Source Code Pro", monospace;
-    font-size: 0.9em;
-    overflow-x: auto;
-    padding: 15px;
-    margin: 15px 0;
+    font-family: "Source Code Pro", "Fira Code", "Consolas", monospace;
   }
 
-  .giscus .giscus-comment-content pre code {
-    background: none;
+  main .gsc-comment-content pre code {
+    background-color: transparent;
     border: none;
     padding: 0;
   }
 
-  /* Comment reactions */
-  .giscus .giscus-comment-reactions {
-    margin-top: 10px;
-    padding-top: 10px;
-    border-top: 1px solid #333340;
+  /* Hide reaction counts for cleaner look */
+  main .gsc-reactions-count {
+    display: none;
   }
 
-  .giscus .giscus-comment-reactions button {
-    background: transparent;
-    border: 1px solid #333340;
-    border-radius: 3px;
-    color: #cccccc;
-    padding: 4px 8px;
-    margin-right: 5px;
-    font-family: "Source Code Pro", monospace;
-    font-size: 0.9em;
-    transition: all 0.2s ease;
-  }
-
-  .giscus .giscus-comment-reactions button:hover {
-    background: rgba(102, 255, 102, 0.1);
-    border-color: #66ff66;
-    color: #66ff66;
-  }
-
-  /* Reply button */
-  .giscus .giscus-reply-button {
-    background: transparent;
-    border: 1px solid #333340;
-    border-radius: 3px;
-    color: #cccccc;
-    padding: 6px 12px;
-    font-family: "Source Code Pro", monospace;
-    font-size: 0.9em;
-    cursor: pointer;
-    transition: all 0.2s ease;
-  }
-
-  .giscus .giscus-reply-button:hover {
-    background: rgba(102, 255, 102, 0.1);
-    border-color: #66ff66;
-    color: #66ff66;
-  }
-
-  /* Loading states */
-  .giscus .giscus-loading {
-    color: #66ff66;
-    text-align: center;
-    padding: 20px;
-    font-family: "Source Code Pro", monospace;
-  }
-
-  /* Error states */
-  .giscus .giscus-error {
-    background: #2a1a1a;
-    border: 1px solid #ff3333;
-    border-radius: 3px;
-    color: #ff6666;
-    padding: 15px;
-    margin: 15px 0;
-  }
-
-  /* Login prompt */
-  .giscus .giscus-login {
-    background: transparent;
-    border: 1px solid #333340;
-    border-radius: 3px;
-    padding: 20px;
-    text-align: center;
-    margin: 20px 0;
-  }
-
-  .giscus .giscus-login a {
-    color: #66ff66;
-    text-decoration: none;
-    transition: all 0.2s ease;
-  }
-
-  .giscus .giscus-login a:hover {
-    color: #99ff99;
-    text-shadow: 0 0 8px rgba(153, 255, 153, 0.4);
-  }
-
-  /* Scrollbars */
-  .giscus ::-webkit-scrollbar {
+  /* Custom scrollbar */
+  main ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
   }
 
-  .giscus ::-webkit-scrollbar-track {
+  main ::-webkit-scrollbar-track {
     background: #10101a;
   }
 
-  .giscus ::-webkit-scrollbar-thumb {
+  main ::-webkit-scrollbar-thumb {
     background: #333340;
     border-radius: 4px;
   }
 
-  .giscus ::-webkit-scrollbar-thumb:hover {
+  main ::-webkit-scrollbar-thumb:hover {
     background: #66ff66;
-  }
-
-  /* Responsive design */
-  @media (max-width: 768px) {
-    .giscus .giscus-main {
-      font-size: 13px;
-    }
-
-    .giscus .giscus-comment-form,
-    .giscus .giscus-comment {
-      padding: 10px;
-    }
-
-    .giscus .giscus-comment-form textarea {
-      min-height: 60px;
-    }
   }
